@@ -16,18 +16,18 @@ app.use(
   })
 );
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS")
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS")
+//   next();
+// });
 
-// app.use(
-//   cors({
-//     origin: CLIENT_ORIGIN
-//   })
-// );
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN
+  })
+);
 
 app.get('/api/cheeses', (req, res) => {
   const cheeses = [
